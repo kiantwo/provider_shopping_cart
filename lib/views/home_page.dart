@@ -75,7 +75,7 @@ class HomePage extends StatelessWidget {
                             );
                           }
                           else {
-                            context.read<DataClass>().increment();
+                            context.read<DataClass>().incrementX();
                           }
                         },
                       ),
