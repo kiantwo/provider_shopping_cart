@@ -50,10 +50,61 @@ class HomePage extends StatelessWidget {
                           child: const Icon(Icons.add),
                         ),
                         onTap: () {
-                          if(context.read<DataClass>().x >= 5) {
-                            Get.snackbar('Item', 'Can not more than this',),
+                          if (context
+                              .read<DataClass>()
+                              .x >= 5) {
+                            Get.snackbar(
+                              'Item',
+                              'Can not more than this',
+                              backgroundColor: Colors.black,
+                              colorText: Colors.white,
+                              titleText: const Text(
+                                'Item',
+                                style: TextStyle(
+                                  fontSize: 40,
+                                  color: Colors.white,
+                                ),
+                              ),
+                              messageText: const Text(
+                                'Can not be more than this',
+                                style: TextStyle(
+                                  fontSize: 20,
+                                  color: Colors.white,
+                                ),
+                              ),
+                            );
+                          }
+                          else {
+                            context.read<DataClass>().increment();
                           }
                         },
+                      ),
+                      const Spacer(),
+                      Container(
+                        height: 60,
+                        width: 200,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.black
+                        ),
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          child: Row(
+                            children: [
+                              GestureDetector(
+                                onTap: () {
+                                  // Get.to(() => SecondPage(),
+                                  //     transition: Transition.upToDown,
+                                  //     duration: const Duration(seconds: 1));
+                                },
+                                child: const Text('Next Page', style: TextStyle(
+                                  fontSize: 20, color: Colors.white,),),
+                              ),
+                              const Spacer(),
+                              const Icon(Icons.skip_next, color: Colors.white),
+                            ],
+                          ),
+                        ),
                       ),
                     ],
                   ),
