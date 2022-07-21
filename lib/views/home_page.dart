@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_shopping_cart/provider/data_class.dart';
+import 'package:provider_shopping_cart/views/second_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -124,9 +125,9 @@ class HomePage extends StatelessWidget {
                       children: [
                         GestureDetector(
                           onTap: () {
-                            // Get.to(() => SecondPage(),
-                            //     transition: Transition.upToDown,
-                            //     duration: const Duration(seconds: 1));
+                            Get.to(() => const SecondPage(),
+                                transition: Transition.upToDown,
+                                duration: const Duration(seconds: 1));
                           },
                           child: const Text(
                             'Next Page',
