@@ -64,7 +64,7 @@ class SecondPage extends StatelessWidget {
                     );
                   }),
                   const Text(
-                    '-- Total',
+                    'Total',
                     style: TextStyle(
                       fontSize: 40,
                       fontWeight: FontWeight.bold,
