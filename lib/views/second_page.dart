@@ -7,12 +7,44 @@ class SecondPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color(0xFFfefcff),
-      body: Container(
+      body: SizedBox(
         width: double.maxFinite,
         height: double.maxFinite,
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
+            const SizedBox(height: 40),
+            //header
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: const [
+                      Icon(Icons.shopping_cart_checkout_outlined,
+                          color: Colors.black),
+                      Text(
+                        'Shopping Cart',
+                        style:
+                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                      ),
+                    ],
+                  ),
+                  const SizedBox(height: 5),
+                  Container(
+                    width: double.infinity,
+                    height: 5,
+                    color: Colors.black,
+                  ),
+                ],
+              ),
+            ),
+            //divider
+            const Padding(
+                padding: EdgeInsets.only(left: 20, right: 20), child: Divider()),
+            const SizedBox(height: 200),
+            //total
             Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
