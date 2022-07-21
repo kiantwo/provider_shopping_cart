@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:provider_shopping_cart/provider/data_class.dart';
 
 class SecondPage extends StatelessWidget {
   const SecondPage({Key? key}) : super(key: key);
@@ -26,8 +28,8 @@ class SecondPage extends StatelessWidget {
                           color: Colors.black),
                       Text(
                         'Shopping Cart',
-                        style:
-                        TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 40),
                       ),
                     ],
                   ),
@@ -42,14 +44,24 @@ class SecondPage extends StatelessWidget {
             ),
             //divider
             const Padding(
-                padding: EdgeInsets.only(left: 20, right: 20), child: Divider()),
+                padding: EdgeInsets.only(left: 20, right: 20),
+                child: Divider()),
             const SizedBox(height: 200),
             //total
             Flexible(
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: const [
-                  Text(
+                children: [
+                  Consumer<DataClass>(builder: (context, data, child) {
+                    return Text(
+                      '${data.x}',
+                      style: const TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    );
+                  }),
+                  const Text(
                     '-- Total',
                     style: TextStyle(
                       fontSize: 40,
