@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 class DataClass extends ChangeNotifier {
   int _x = 0;
 
-  void increment() {
+  void incrementX() {
     _x++;
     notifyListeners();
   }
 
-  void decrement() {
+  void decrementX() {
     _x--;
     notifyListeners();
   }
