@@ -26,7 +26,7 @@ class SecondPage extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: const [
-                      Icon(Icons.shopping_cart_checkout_outlined,
+                      Icon(Icons.shopping_cart_outlined,
                           color: Colors.black),
                       Text(
                         'Shopping Cart',
